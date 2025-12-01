@@ -1,8 +1,8 @@
 # Dependencies
 node_modules/
-package-lock.json
+package-lock. json
 
-# Build artifacts
+# Build
 dist/
 build/
 *.min.js
@@ -10,21 +10,32 @@ build/
 # Temporary files
 tmp/
 temp/
-*.tmp
+*. tmp
+
+# Logs
 *.log
+npm-debug.log*
 
 # OS files
-.DS_Store
+. DS_Store
 Thumbs.db
 *.swp
-*.swo
+*. swo
 *~
 
 # IDE
-.vscode/
-.idea/
+. vscode/
+. idea/
 *.sublime-*
 
 # Environment
 .env
-.env.local
+. env.local
+
+# Cache
+.cache/
+*.cache
+
+# Backup
+*.bak
+*.backup
