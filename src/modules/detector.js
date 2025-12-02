@@ -45,7 +45,6 @@ export class Detector {
         const patterns = {
             direct_connection: false,
             iran_location: false,
-            no_vpn: false,
             suspicious_timing: false,
             hidden_identity: false,
             count: 0,
@@ -62,7 +61,6 @@ export class Detector {
         // Check for direct connection (no VPN indicators)
         if (userData.connection?.direct) {
             patterns.direct_connection = true;
-            patterns.no_vpn = true;
             patterns.count++;
             patterns.score += 0.4;
         }
@@ -96,7 +94,7 @@ export class Detector {
         }
 
         // ⚠️ Anomaly (White SIM) - Direct connection from Iran
-        if (patterns.iran_location && patterns.no_vpn && patterns.direct_connection) {
+        if (patterns.iran_location && patterns.direct_connection) {
             return 'anomaly';
         }
 
